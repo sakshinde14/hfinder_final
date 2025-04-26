@@ -23,8 +23,8 @@ import React from 'react';
             <p className="text-sm text-gray-600">Please try adjusting your budget, location, or other criteria.</p>
           </div>
         )}
-      
-    </>
+    </>  
+    
   );
  }
 
