@@ -83,18 +83,22 @@ def get_recommendations(preferences):
 
  return top_recommendations
 
+
 @app.route('/recommendations', methods=['POST'])
 def get_recommendations_endpoint():
- """
- API endpoint to receive user preferences and return hostel recommendations.
- """
  preferences = request.get_json()
  if not preferences:
   return jsonify({'error': 'No preferences provided'}), 400
 
- recommendations = get_recommendations(preferences)
- return jsonify({'recommendations': recommendations}), 200
+ top_recommendation_names = get_recommendations(preferences)
+
+  # Fetch details for the top recommendations
+ recommended_hostels_details = []
+ for name in top_recommendation_names:
+  hostel_data = df[df['hostel_name'] == name].iloc[0].to_dict()
+  recommended_hostels_details.append(hostel_data)
+
+ return jsonify({'recommendations': recommended_hostels_details}), 200
 
 if __name__ == '__main__':
  app.run(debug=True)
-
