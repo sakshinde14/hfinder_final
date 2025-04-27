@@ -1,43 +1,43 @@
 import React, { useState } from 'react';
- import './App.css';
- import HomePage from './HomePage';
- import PreferenceForm from './PreferenceForm';
- import RecommendationsPage from './RecommendationsPage'; // Create this component
+import './App.css';
+import HomePage from './HomePage';
+import PreferenceForm from './PreferenceForm';
+import RecommendationsPage from './RecommendationsPage'; // Create this component
 
- function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [recommendations, setRecommendations] = useState([]);
+function App() {
+ const [currentPage, setCurrentPage] = useState('home');
+ const [recommendations, setRecommendations] = useState([]);
 
-  const handleGetStartedClick = () => {
-  setCurrentPage('preferenceForm');
-  };
+ const handleGetStartedClick = () => {
+ setCurrentPage('preferenceForm');
+ };
 
-  const handleShowRecommendations = (recommendations) => {
-  setRecommendations(recommendations);
-  setCurrentPage('recommendations');
-  };
+ const handleShowRecommendations = (recommendations) => {
+ setRecommendations(recommendations);
+ setCurrentPage('recommendations');
+ };
 
-  return (
-  <>
-  {currentPage === 'home' && (
+ return (
+ <>
+ {currentPage === 'home' && (
   
-  <HomePage onGetStartedClick={handleGetStartedClick} />
+ <HomePage onGetStartedClick={handleGetStartedClick} />
   
-  )}
+ )}
 
-  {currentPage === 'preferenceForm' && (
+ {currentPage === 'preferenceForm' && (
   
-  <PreferenceForm onRecommendations={handleShowRecommendations} />
+ <PreferenceForm onRecommendations={handleShowRecommendations} />
   
-  )}
+ )}
 
-  {currentPage === 'recommendations' && (
+ {currentPage === 'recommendations' && (
   
-  <RecommendationsPage recommendations={recommendations} />
+ <RecommendationsPage recommendations={recommendations} />
   
-  )}
-  </>
-  );
- }
+ )}
+ </>
+ );
+}
 
- export default App;
+export default App;

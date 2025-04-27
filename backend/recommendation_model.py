@@ -79,7 +79,7 @@ def get_recommendations(preferences):
  location_matched_hostels = hostel_features[hostel_features['location'] == user_features['location']]
 
   # Get the top 3 most similar hostels
- top_recommendations = location_matched_hostels.nlargest(3, 'similarity')['hostel_name'].tolist()
+ top_recommendations = location_matched_hostels.nlargest(5, 'similarity')['hostel_name'].tolist()
 
  return top_recommendations
 
