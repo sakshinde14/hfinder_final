@@ -2,103 +2,103 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, request, jsonify
 from flask_cors import CORS # Import CORS
-
-
- # Load the hostel data from data.py
-from data import data
-
- # Convert the data to a Pandas DataFrame
-df = pd.DataFrame(data)
+import pymongo  # Import PyMongo
 
 app = Flask(__name__)
-CORS(app) # Enable CORS for all routes
+CORS(app)
+
+# 1. MongoDB Connection URI
+#    - Replace with your actual MongoDB connection string.
+#    - This string tells PyMongo how to connect to your MongoDB instance.
+#    - It typically includes the username, password (if any), host, port, and database name.
+#    - Example:  "mongodb://username:password@host:port/database_name"
+#    - If your MongoDB is running on the same machine as your Flask app with the default settings, it might look like this:
+#      "mongodb://localhost:27017/hostel_recommender"  (where "hostel_recommender" is your database name)
+mongo_uri = "mongodb+srv://sakshi:gaurinde@cluster0.vpbqv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+# 2. Connect to MongoDB
+#    - Use pymongo.MongoClient to establish a connection.
+try:
+    client = pymongo.MongoClient(mongo_uri)
+    db = client.get_database("hostel_recommender")  # Get the database object
+    print("Connected to MongoDB!")  # Optional: Print a success message
+except pymongo.errors.ConnectionFailure as e:
+    print(f"Failed to connect to MongoDB: {e}")
+    #  IMPORTANT:  If you can't connect to the database, the rest of your app might not work.  You might want to:
+    #  -  Raise an exception here to prevent the app from starting.
+    #  -  Return an error response to the client if this happens during a request.
+
+
+# 3. Define Collections (instead of tables)
+#    - In MongoDB, you work with "collections" instead of tables.
+#    - You don't define a schema in the same way as with relational databases, but it's good practice to have a consistent structure for your documents.
+#    -  We'll define the collections we'll use.  You don't *have* to create them explicitly; MongoDB will create them when you first insert data, but it's good to know what you'll be using.
+    hostels_collection = db.hostels  #  Example:  "hostels" collection
+    users_collection = db.users # "users" collection
+    # Add more collections as needed (e.g., for preferences, ratings).
+
+
 
 def get_recommendations(preferences):
- """
- Recommends hostels based on user preferences using content-based filtering.
+    """
+    Recommends hostels based on user preferences.
 
- Args:
- preferences (dict): A dictionary containing user preferences for
-                        'budget', 'location', 'room_type', 'amenities', and
-                        'safety_priority'.
+    Args:
+        preferences (dict): User preferences.
 
- Returns:
- list: A list of recommended hostels (hostel_name).
- """
+    Returns:
+        list: Recommended hostels (documents from MongoDB).
+    """
+    #  IMPORTANT:  You'll need to adapt this function to work with MongoDB.
+    #  -  Instead of using Pandas and cosine_similarity, you'll use PyMongo to query MongoDB.
+    #  -  The logic will be similar, but the syntax will be different.
 
-  # Create a feature vector for the user's preferences
- user_features = pd.Series({
-   'budget_low': 1 if preferences['budget'] == 'Low' else 0,
-   'budget_medium': 1 if preferences['budget'] == 'Medium' else 0,
-   'budget_high': 1 if preferences['budget'] == 'High' else 0,
-   'location': preferences['location'],
-   'room_type_single': 1 if preferences['room_type'] == 'Single' else 0,
-   'room_type_double': 1 if preferences['room_type'] == 'Double' else 0,
-   'room_type_shared': 1 if preferences['room_type'] == 'Shared' else 0,
-   'amenities_wifi': 1 if 'WiFi' in preferences['amenities'] else 0,
-   'amenities_ac': 1 if 'AC' in preferences['amenities'] else 0,
-   'amenities_food': 1 if 'Food' in preferences['amenities'] else 0,
-   'amenities_laundry': 1 if 'Laundry' in preferences['amenities'] else 0,
-   'safety_priority_high': 1 if preferences['safety_priority'] == 'High' else 0,
-   'safety_priority_medium': 1 if preferences['safety_priority'] == 'Medium' else 0,
-   'safety_priority_low': 1 if preferences['safety_priority'] == 'Low' else 0
- })
+    #  Example (Conceptual):
+    #  1.  Find hostels that match the user's location.
+    #      location_match = hostels_collection.find({'location': preferences['location']})
+    #
+    #  2.  Calculate a score for each hostel based on the preferences.
+    #      (You'll need to define how you want to score hostels based on budget, room type, amenities, etc.)
+    #
+    #  3.  Sort the hostels by score.
+    #
+    #  4.  Return the top 3 hostels.
+    #  recommended_hostels = sorted(hostels, key=lambda x: x['score'], reverse=True)[:3]
+    #  return list(recommended_hostels) # Convert the result to a list
+    return [] #Added to remove error
 
-  # Create feature vectors for all hostels
- hostel_features = df.apply(lambda row: pd.Series({
-   'hostel_name': row['hostel_name'],
-   'budget_low': 1 if row['rent'] <= 5000 else 0,
-   'budget_medium': 1 if 5000 < row['rent'] <= 8000 else 0,
-   'budget_high': 1 if row['rent'] > 8000 else 0,
-   'location': row['location'],
-   'room_type_single': 1 if row['room_type'] == 'Single' else 0,
-   'room_type_double': 1 if row['room_type'] == 'Double' else 0,
-   'room_type_shared': 1 if row['room_type'] == 'Shared' else 0,
-   'amenities_wifi': 1 if 'WiFi' in row['amenities'] else 0,
-   'amenities_ac': 1 if 'AC' in row['amenities'] else 0,
-   'amenities_food': 1 if 'Food' in row['amenities'] else 0,
-   'amenities_laundry': 1 if 'Laundry' in row['amenities'] else 0,
-   'safety_priority_high': 1 if row['safety_priority'] == 'High' else 0,
-   'safety_priority_medium': 1 if row['safety_priority'] == 'Medium' else 0,
-   'safety_priority_low': 1 if row['safety_priority'] == 'Low' else 0
- }), axis=1)
-
-  # Calculate cosine similarity (excluding location for now)
- user_features_for_similarity = user_features.drop('location')
- hostel_features_for_similarity = hostel_features.drop('location', axis=1)
-
- similarities = cosine_similarity(
-  hostel_features_for_similarity.drop('hostel_name', axis=1),
-  user_features_for_similarity.values.reshape(1, -1)
- ).flatten()
-
-  # Add similarity scores to the hostel features
- hostel_features['similarity'] = similarities
-
-  # Filter hostels based on location (exact match for now)
- location_matched_hostels = hostel_features[hostel_features['location'] == user_features['location']]
-
-  # Get the top 3 most similar hostels
- top_recommendations = location_matched_hostels.nlargest(5, 'similarity')['hostel_name'].tolist()
-
- return top_recommendations
 
 
 @app.route('/recommendations', methods=['POST'])
 def get_recommendations_endpoint():
- preferences = request.get_json()
- if not preferences:
-  return jsonify({'error': 'No preferences provided'}), 400
+    """
+    API endpoint to receive user preferences and return hostel recommendations.
+    """
+    preferences = request.get_json()
+    if not preferences:
+        return jsonify({'error': 'No preferences provided'}), 400
 
- top_recommendation_names = get_recommendations(preferences)
+    recommendations = get_recommendations(preferences)  # Call your MongoDB-adapted function
 
-  # Fetch details for the top recommendations
- recommended_hostels_details = []
- for name in top_recommendation_names:
-  hostel_data = df[df['hostel_name'] == name].iloc[0].to_dict()
-  recommended_hostels_details.append(hostel_data)
+    # Convert the MongoDB documents to a JSON-serializable format (if needed)
+    #  (PyMongo usually returns data in a format that Flask can handle, but you might need to do some conversion in some cases.)
+    return jsonify({'recommendations': recommendations}), 200
 
- return jsonify({'recommendations': recommended_hostels_details}), 200
+
+
+@app.route('/test', methods=['GET'])
+def test_mongodb_connection():
+    """
+    Test route to check the MongoDB connection.
+    """
+    try:
+        #  Perform a simple operation to check if the connection is working.
+        client.admin.command('ping', 1)  #  The "ping" command is a simple way to test the connection
+        return jsonify({'status': 'MongoDB connection successful!'}), 200
+    except Exception as e:
+        return jsonify({'status': 'MongoDB connection failed!', 'error': str(e)}), 500
+
+
 
 if __name__ == '__main__':
- app.run(debug=True)
+    app.run(debug=True)
