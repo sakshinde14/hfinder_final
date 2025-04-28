@@ -2,7 +2,7 @@ data = [
     # Fergusson College
     {
         "hostel_name": "Fergusson Elite PG",
-        "location": "Fergusson College",
+        "college": "Fergusson College",
         "address": "114 Fergusson College Road, Pune",
         "contact_number": "9876543210",
         "rent": 9500,
@@ -15,7 +15,7 @@ data = [
     },
     {
         "hostel_name": "Fergusson Comfort Stay",
-        "location": "Fergusson College",
+        "college": "Fergusson College",
         "address": "120 FC Road, Pune",
         "contact_number": "9876543211",
         "rent": 8000,
@@ -28,7 +28,7 @@ data = [
     },
     {
         "hostel_name": "Fergusson Student Home",
-        "location": "Fergusson College",
+        "college": "Fergusson College",
         "address": " рядом с Fergusson College gate",
         "contact_number": "9876543212",
         "rent": 6500,
@@ -41,7 +41,7 @@ data = [
     },
     {
         "hostel_name": "Fergusson Residency",
-        "location": "Fergusson College",
+        "college": "Fergusson College",
         "address": "Opposite Fergusson College",
         "contact_number": "9876543213",
         "rent": 10000,
@@ -54,7 +54,7 @@ data = [
     },
      {
         "hostel_name": "Fergusson Girls Palace",
-        "location": "Fergusson College",
+        "college": "Fergusson College",
         "address": "Fergusson College Lane",
         "contact_number": "9876543214",
         "rent": 7000,
@@ -68,7 +68,7 @@ data = [
     # Symbiosis College of Arts and Commerce
     {
         "hostel_name": "Symbiosis Oasis PG",
-        "location": "Symbiosis College of Arts and Commerce",
+        "college": "Symbiosis College of Arts and Commerce",
         "address": "23 Symbiosis Road, Pune",
         "contact_number": "9876543220",
         "rent": 8800,
@@ -81,7 +81,7 @@ data = [
     },
     {
         "hostel_name": "Symbiosis Comfort Zone",
-        "location": "Symbiosis College of Arts and Commerce",
+        "college": "Symbiosis College of Arts and Commerce",
         "address": " рядом с Symbiosis College",
         "contact_number": "9876543221",
         "rent": 7200,
@@ -94,7 +94,7 @@ data = [
     },
     {
         "hostel_name": "Symbiosis Safe Haven",
-        "location": "Symbiosis College of Arts and Commerce",
+        "college": "Symbiosis College of Arts and Commerce",
         "address": "Symbiosis nagar",
         "contact_number": "9876543222",
         "rent": 10500,
@@ -107,7 +107,7 @@ data = [
     },
     {
         "hostel_name": "Symbiosis Girls Nest",
-        "location": "Symbiosis College of Arts and Commerce",
+        "college": "Symbiosis College of Arts and Commerce",
         "address": "Symbiosis college road",
         "contact_number": "9876543223",
         "rent": 6000,
@@ -120,7 +120,7 @@ data = [
     },
     {
         "hostel_name": "College Girls Abode",
-        "location": "Symbiosis College of Arts and Commerce",
+        "college": "Symbiosis College of Arts and Commerce",
         "address": "Senapati Bapat Road",
         "contact_number": "9876543224",
         "rent": 8500,
@@ -134,7 +134,7 @@ data = [
     # College of Engineering (COEP)
     {
         "hostel_name": "COEP Riverside Hostel",
-        "location": "College of Engineering (COEP)",
+        "college": "College of Engineering (COEP)",
         "address": "Shivajinagar, Pune",
         "contact_number": "9876543230",
         "rent": 7800,
@@ -147,7 +147,7 @@ data = [
     },
     {
         "hostel_name": "COEP Tech Stay",
-        "location": "College of Engineering (COEP)",
+        "college": "College of Engineering (COEP)",
         "address": "Near COEP Main Gate",
         "contact_number": "9876543231",
         "rent": 9200,
@@ -160,7 +160,7 @@ data = [
     },
     {
         "hostel_name": "COEP Students Home",
-        "location": "College of Engineering (COEP)",
+        "college": "College of Engineering (COEP)",
         "address": "COEP Back Gate",
         "contact_number": "9876543232",
         "rent": 6000,
@@ -173,7 +173,7 @@ data = [
     },
     {
         "hostel_name": "COEP Luxury Living",
-        "location": "College of Engineering (COEP)",
+        "college": "College of Engineering (COEP)",
         "address": "University Road, Pune",
         "contact_number": "9876543233",
         "rent": 11000,
@@ -186,7 +186,7 @@ data = [
     },
     {
         "hostel_name": " рядом с COEP Girls Hostel",
-        "location": "College of Engineering (COEP)",
+        "college": "College of Engineering (COEP)",
         "address": "Shivajinagar",
         "contact_number": "9876543234",
         "rent": 7500,
@@ -200,7 +200,7 @@ data = [
     # MIT World Peace University (MIT-WPU)
     {
         "hostel_name": "MIT-WPU Peace Hostel",
-        "location": "MIT World Peace University (MIT-WPU)",
+        "college": "MIT World Peace University (MIT-WPU)",
         "address": "Kothrud, Pune",
         "contact_number": "9876543240",
         "rent": 8200,
@@ -213,7 +213,7 @@ data = [
     },
     {
         "hostel_name": "MIT-WPU Student Home",
-        "location": "MIT World Peace University (MIT-WPU)",
+        "college": "MIT World Peace University (MIT-WPU)",
         "address": "Near MIT-WPU Campus",
         "contact_number": "9876543241",
         "rent": 9800,
@@ -226,7 +226,7 @@ data = [
     },
     {
         "hostel_name": "MIT-WPU Cozy Stay",
-        "location": "MIT World Peace University (MIT-WPU)",
+        "college": "MIT World Peace University (MIT-WPU)",
         "address": "Paud Road, Kothrud",
         "contact_number": "9876543242",
         "rent": 6800,
@@ -239,7 +239,7 @@ data = [
     },
     {
         "hostel_name": "World Peace Hostel",
-        "location": "MIT World Peace University (MIT-WPU)",
+        "college": "MIT World Peace University (MIT-WPU)",
         "address": "MIT-WPU Back gate",
         "contact_number": "9876543243",
         "rent": 10500,
@@ -252,7 +252,7 @@ data = [
     },
     {
         "hostel_name": " рядом с MIT Girls Hostel",
-        "location": "MIT World Peace University (MIT-WPU)",
+        "college": "MIT World Peace University (MIT-WPU)",
         "address": "Kothrud",
         "contact_number": "9876543244",
         "rent": 7200,
@@ -266,7 +266,7 @@ data = [
     # Brihan Maharashtra College of Commerce (BMCC)
     {
         "hostel_name": "BMCC Commerce Hostel",
-        "location": "Brihan Maharashtra College of Commerce (BMCC)",
+        "college": "Brihan Maharashtra College of Commerce (BMCC)",
         "address": "Deccan Gymkhana, Pune",
         "contact_number": "9876543250",
         "rent": 7000,
@@ -279,7 +279,7 @@ data = [
     },
     {
         "hostel_name": "BMCC Student Plaza",
-        "location": "Brihan Maharashtra College of Commerce (BMCC)",
+        "college": "Brihan Maharashtra College of Commerce (BMCC)",
         "address": "Near BMCC Campus",
         "contact_number": "9876543251",
         "rent": 8500,
@@ -292,7 +292,7 @@ data = [
     },
     {
         "hostel_name": "BMCC Cozy Home",
-        "location": "Brihan Maharashtra College of Commerce (BMCC)",
+        "college": "Brihan Maharashtra College of Commerce (BMCC)",
         "address": "BMCC Road",
         "contact_number": "9876543252",
         "rent": 6200,
@@ -305,7 +305,7 @@ data = [
     },
     {
         "hostel_name": "Commerce Girls PG",
-        "location": "Brihan Maharashtra College of Commerce (BMCC)",
+        "college": "Brihan Maharashtra College of Commerce (BMCC)",
         "address": " рядом с BMCC",
         "contact_number": "9876543253",
         "rent": 9000,
@@ -318,7 +318,7 @@ data = [
     },
     {
         "hostel_name": "BMCC Residency",
-        "location": "Brihan Maharashtra College of Commerce (BMCC)",
+        "college": "Brihan Maharashtra College of Commerce (BMCC)",
         "address": "Deccan Gymkhana",
         "contact_number": "9876543254",
         "rent": 7800,
@@ -332,7 +332,7 @@ data = [
     # Sir Parashurambhau College (SP College)
      {
         "hostel_name": "SP College Hostel 1",
-        "location": "Sir Parashurambhau College (SP College)",
+        "college": "Sir Parashurambhau College (SP College)",
         "address": "Tilak Road, Pune",
         "contact_number": "9876543215",
         "rent": 7000,
@@ -345,7 +345,7 @@ data = [
     },
     {
         "hostel_name": "SP Residency",
-        "location": "Sir Parashurambhau College (SP College)",
+        "college": "Sir Parashurambhau College (SP College)",
         "address": "Near SP College",
         "contact_number": "9876543216",
         "rent": 9000,
@@ -358,7 +358,7 @@ data = [
     },
     {
         "hostel_name": "Girls PG SP",
-        "location": "Sir Parashurambhau College (SP College)",
+        "college": "Sir Parashurambhau College (SP College)",
         "address": " рядом с SP College",
         "contact_number": "9876543217",
         "rent": 5500,
@@ -371,7 +371,7 @@ data = [
     },
     {
         "hostel_name": "SP Comfort Stay",
-        "location": "Sir Parashurambhau College (SP College)",
+        "college": "Sir Parashurambhau College (SP College)",
         "address": "SP College Road",
         "contact_number": "9876543218",
         "rent": 8200,
@@ -384,7 +384,7 @@ data = [
     },
     {
         "hostel_name": "SP Elite Home",
-        "location": "Sir Parashurambhau College (SP College)",
+        "college": "Sir Parashurambhau College (SP College)",
         "address": "Tilak Road",
         "contact_number": "9876543219",
         "rent": 10200,
@@ -398,7 +398,7 @@ data = [
     # Nowrosjee Wadia College
     {
         "hostel_name": "Wadia Girls Hostel",
-        "location": "Nowrosjee Wadia College",
+        "college": "Nowrosjee Wadia College",
         "address": "Bund Garden Road, Pune",
         "contact_number": "9876543216",
         "rent": 6500,
@@ -411,7 +411,7 @@ data = [
     },
     {
         "hostel_name": "Wadia Student House",
-        "location": "Nowrosjee Wadia College",
+        "college": "Nowrosjee Wadia College",
         "address": "Near Wadia College",
         "contact_number": "9876543225",
         "rent": 7800,
@@ -424,7 +424,7 @@ data = [
     },
         {
         "hostel_name": "Wadia Comfort PG",
-        "location": "Nowrosjee Wadia College",
+        "college": "Nowrosjee Wadia College",
         "address": "Bund Garden",
         "contact_number": "9876543226",
         "rent": 5800,
@@ -437,7 +437,7 @@ data = [
     },
     {
         "hostel_name": "Wadia Residency",
-        "location": "Nowrosjee Wadia College",
+        "college": "Nowrosjee Wadia College",
         "address": " рядом с Wadia College",
         "contact_number": "9876543227",
         "rent": 9200,
@@ -450,7 +450,7 @@ data = [
     },
     {
         "hostel_name": "Wadia Girls Home",
-        "location": "Nowrosjee Wadia College",
+        "college": "Nowrosjee Wadia College",
         "address": "Pune Station Road",
         "contact_number": "9876543228",
         "rent": 6900,
@@ -464,7 +464,7 @@ data = [
     # Ness Wadia College of Commerce
     {
         "hostel_name": "Ness Dormitory",
-        "location": "Ness Wadia College of Commerce",
+        "college": "Ness Wadia College of Commerce",
         "address": "Shivaji Nagar, Pune",
         "contact_number": "9876543217",
         "rent": 7500,
@@ -477,7 +477,7 @@ data = [
     },
     {
         "hostel_name": "Ness Commerce Hostel",
-        "location": "Ness Wadia College of Commerce",
+        "college": "Ness Wadia College of Commerce",
         "address": "Near Ness College",
         "contact_number": "9876543229",
         "rent": 6800,
@@ -490,7 +490,7 @@ data = [
     },
     {
         "hostel_name": "Ness Student Living",
-        "location": "Ness Wadia College of Commerce",
+        "college": "Ness Wadia College of Commerce",
         "address": " рядом с college",
         "contact_number": "9876543235",
         "rent": 5900,
@@ -503,7 +503,7 @@ data = [
     },
     {
         "hostel_name": "Ness Girls PG",
-        "location": "Ness Wadia College of Commerce",
+        "college": "Ness Wadia College of Commerce",
         "address": "Shivaji nagar",
         "contact_number": "9876543236",
         "rent": 9100,
@@ -516,7 +516,7 @@ data = [
     },
     {
         "hostel_name": "Ness Comfort Zone",
-        "location": "Ness Wadia College of Commerce",
+        "college": "Ness Wadia College of Commerce",
         "address": "Pune",
         "contact_number": "9876543237",
         "rent": 7700,
@@ -530,7 +530,7 @@ data = [
     # Pune Institute of Computer Technology (PICT)
     {
         "hostel_name": "PICT Hostel",
-        "location": "Pune Institute of Computer Technology (PICT)",
+        "college": "Pune Institute of Computer Technology (PICT)",
         "address": "Dhankawadi, Pune",
         "contact_number": "9876543218",
         "rent": 8000,
@@ -544,7 +544,7 @@ data = [
   # Pune Institute of Computer Technology (PICT)
   {
     "hostel_name": "PICT Hostel 1",
-    "location": "Pune Institute of Computer Technology (PICT)",
+    "college": "Pune Institute of Computer Technology (PICT)",
     "address": "Kothrud, Pune",
     "contact_number": "9876543215",
     "rent": 8000,
@@ -557,7 +557,7 @@ data = [
   },
   {
     "hostel_name": "PICT Hostel 2",
-    "location": "Pune Institute of Computer Technology (PICT)",
+    "college": "Pune Institute of Computer Technology (PICT)",
     "address": "Karve Nagar, Pune",
     "contact_number": "9876543216",
     "rent": 8500,
@@ -570,7 +570,7 @@ data = [
   },
   {
     "hostel_name": "PICT Hostel 3",
-    "location": "Pune Institute of Computer Technology (PICT)",
+    "college": "Pune Institute of Computer Technology (PICT)",
     "address": "Pashan Road, Pune",
     "contact_number": "9876543217",
     "rent": 7500,
@@ -583,7 +583,7 @@ data = [
   },
   {
     "hostel_name": "PICT Hostel 4",
-    "location": "Pune Institute of Computer Technology (PICT)",
+    "college": "Pune Institute of Computer Technology (PICT)",
     "address": "Hinjewadi, Pune",
     "contact_number": "9876543218",
     "rent": 9000,
@@ -596,7 +596,7 @@ data = [
   },
   {
     "hostel_name": "PICT Hostel 5",
-    "location": "Pune Institute of Computer Technology (PICT)",
+    "college": "Pune Institute of Computer Technology (PICT)",
     "address": "Baner, Pune",
     "contact_number": "9876543219",
     "rent": 7000,
@@ -611,7 +611,7 @@ data = [
   # Vishwakarma Institute of Technology (VIT)
   {
     "hostel_name": "VIT Hostel 1",
-    "location": "Vishwakarma Institute of Technology (VIT)",
+    "college": "Vishwakarma Institute of Technology (VIT)",
     "address": "Bibwewadi, Pune",
     "contact_number": "9876543223",
     "rent": 7500,
@@ -624,7 +624,7 @@ data = [
   },
   {
     "hostel_name": "VIT Hostel 2",
-    "location": "Vishwakarma Institute of Technology (VIT)",
+    "college": "Vishwakarma Institute of Technology (VIT)",
     "address": "Sadashiv Peth, Pune",
     "contact_number": "9876543224",
     "rent": 8000,
@@ -637,7 +637,7 @@ data = [
   },
   {
     "hostel_name": "VIT Hostel 3",
-    "location": "Vishwakarma Institute of Technology (VIT)",
+    "college": "Vishwakarma Institute of Technology (VIT)",
     "address": "Kothrud, Pune",
     "contact_number": "9876543225",
     "rent": 7000,
@@ -650,7 +650,7 @@ data = [
   },
   {
     "hostel_name": "VIT Hostel 4",
-    "location": "Vishwakarma Institute of Technology (VIT)",
+    "college": "Vishwakarma Institute of Technology (VIT)",
     "address": "Shivajinagar, Pune",
     "contact_number": "9876543226",
     "rent": 8500,
@@ -663,7 +663,7 @@ data = [
   },
   {
     "hostel_name": "VIT Hostel 5",
-    "location": "Vishwakarma Institute of Technology (VIT)",
+    "college": "Vishwakarma Institute of Technology (VIT)",
     "address": "Warje, Pune",
     "contact_number": "9876543227",
     "rent": 6500,
@@ -678,7 +678,7 @@ data = [
   #Cummins College of Engineering for Women
   {
     "hostel_name": "Cummins Women's Hostel 1",
-    "location": "Cummins College of Engineering for Women",
+    "college": "Cummins College of Engineering for Women",
     "address": "Karvenagar, Pune",
     "contact_number": "9876543228",
     "rent": 7000,
@@ -691,7 +691,7 @@ data = [
   },
   {
     "hostel_name": "Cummins Women's Hostel 2",
-    "location": "Cummins College of Engineering for Women",
+    "college": "Cummins College of Engineering for Women",
     "address": "Shivajinagar, Pune",
     "contact_number": "9876543229",
     "rent": 7800,
@@ -704,7 +704,7 @@ data = [
   },
   {
     "hostel_name": "Cummins Women's Hostel 3",
-    "location": "Cummins College of Engineering for Women",
+    "college": "Cummins College of Engineering for Women",
     "address": "Karve Road, Pune",
     "contact_number": "9876543230",
     "rent": 8200,
@@ -717,7 +717,7 @@ data = [
   },
   {
     "hostel_name": "Cummins Women's Hostel 4",
-    "location": "Cummins College of Engineering for Women",
+    "college": "Cummins College of Engineering for Women",
     "address": "Warje, Pune",
     "contact_number": "9876543231",
     "rent": 7000,
@@ -730,7 +730,7 @@ data = [
   },
   {
     "hostel_name": "Cummins Women's Hostel 5",
-    "location": "Cummins College of Engineering for Women",
+    "college": "Cummins College of Engineering for Women",
     "address": "Kothrud, Pune",
     "contact_number": "9876543232",
     "rent": 7500,
@@ -745,7 +745,7 @@ data = [
   # Dr. D. Y. Patil Institute of Technology, Pimpri
   {
     "hostel_name": "DYPIT Hostel 1",
-    "location": "Dr. D. Y. Patil Institute of Technology, Pimpri",
+    "college": "Dr. D. Y. Patil Institute of Technology, Pimpri",
     "address": "Pimpri, Pune",
     "contact_number": "9876543233",
     "rent": 8000,
@@ -758,7 +758,7 @@ data = [
   },
   {
     "hostel_name": "DYPIT Hostel 2",
-    "location": "Dr. D. Y. Patil Institute of Technology, Pimpri",
+    "college": "Dr. D. Y. Patil Institute of Technology, Pimpri",
     "address": "Pimpri, Pune",
     "contact_number": "9876543234",
     "rent": 7000,
@@ -771,7 +771,7 @@ data = [
   },
   {
     "hostel_name": "DYPIT Hostel 3",
-    "location": "Dr. D. Y. Patil Institute of Technology, Pimpri",
+    "college": "Dr. D. Y. Patil Institute of Technology, Pimpri",
     "address": "Pimpri, Pune",
     "contact_number": "9876543235",
     "rent": 7500,
@@ -784,7 +784,7 @@ data = [
   },
   {
     "hostel_name": "DYPIT Hostel 4",
-    "location": "Dr. D. Y. Patil Institute of Technology, Pimpri",
+    "college": "Dr. D. Y. Patil Institute of Technology, Pimpri",
     "address": "Pimpri, Pune",
     "contact_number": "9876543236",
     "rent": 8500,
@@ -797,7 +797,7 @@ data = [
   },
   {
     "hostel_name": "DYPIT Hostel 5",
-    "location": "Dr. D. Y. Patil Institute of Technology, Pimpri",
+    "college": "Dr. D. Y. Patil Institute of Technology, Pimpri",
     "address": "Pimpri, Pune",
     "contact_number": "9876543237",
     "rent": 9000,
