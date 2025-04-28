@@ -6,7 +6,6 @@ function PreferenceForm({ onRecommendations }) {
   const [roomType, setRoomType] = useState('');
   const [amenities, setAmenities] = useState([]);
   const [safetyPriority, setSafetyPriority] = useState('');
-  const [maxRent, setMaxRent] = useState(''); // Added state for maxRent
 
   const colleges = [
     'Fergusson College',
@@ -48,20 +47,11 @@ function PreferenceForm({ onRecommendations }) {
     'Flame University',
     'International School of Business & Media (ISBM)',
     'DY Patil Dental College and Hospital'
-  ]; // Added colleges
+  ]; // Added college
 
-  const allAmenities = [  // Expanded amenities
-    'WiFi',
-    'AC',
-    'Food',
-    'Laundry',
-    'TV',
-    'Gym',
-    'Security',
-    'Parking',
-    'Attached Bathroom',
-    'Hot Water'
-  ];
+
+
+  const allAmenities = ['WiFi', 'AC', 'Food', 'Laundry', 'TV', 'Gym', 'Security', 'Parking', 'Attached Bathroom', 'Hot Water'];
 
   const handleAmenityChange = (event) => {
     const amenity = event.target.id;
@@ -78,8 +68,8 @@ function PreferenceForm({ onRecommendations }) {
     event.preventDefault();
 
     const preferences = {
-      budget: maxRent ? `Upto ${maxRent}` : budget, // Use maxRent or original budget
-      location,
+      budget: budget ? `Upto ${budget}` : budget,
+      college: college,
       room_type: roomType,
       amenities,
       safety_priority: safetyPriority,
@@ -88,9 +78,7 @@ function PreferenceForm({ onRecommendations }) {
     try {
       const response = await fetch('http://127.0.0.1:5000/recommendations', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(preferences),
       });
 
@@ -106,33 +94,33 @@ function PreferenceForm({ onRecommendations }) {
   };
 
   return (
-    <>
-      <h2 className="text-4xl font-bold text-center mt-12 text-pink-500">
+    <div className="flex flex-col items-center p-8">
+      <h2 className="text-4xl font-bold text-center mt-12 text-pink-500 mb-10">
         Enter Your Preferences
       </h2>
-      <form onSubmit={handleSubmit}>
-        {/* Maximum Rent Input */}
-        <label htmlFor="maxRent" className="text-2xl block text-gray-700 mb-2 mt-2">
+      <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+        {/* Maximum Rent */}
+        <label htmlFor="budget" className="text-2xl block text-gray-700 mb-2">
           Maximum Rent
         </label>
         <input
           type="number"
-          id="maxRent"
-          value={maxRent}
-          onChange={(e) => setMaxRent(e.target.value)}
+          id="budget"
+          value={budget}
+          onChange={(e) => setBudget(e.target.value)}
           placeholder="Enter maximum rent"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-4 mb-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
 
-        {/* College Dropdown */}
-        <label htmlFor="college" className="text-2xl block text-gray-700 mb-2 mt-2">
+        {/* College Name */}
+        <label htmlFor="college" className="text-2xl block text-gray-700 mb-2">
           College Name
         </label>
         <select
           id="college"
           value={college}
           onChange={(e) => setCollege(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-4 mb-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           <option value="">Select a College</option>
           {colleges.map((col) => (
@@ -142,15 +130,15 @@ function PreferenceForm({ onRecommendations }) {
           ))}
         </select>
 
-        {/* Room Type Dropdown */}
-        <label htmlFor="roomType" className="text-2xl block text-gray-700 mb-2 mt-2">
+        {/* Room Type */}
+        <label htmlFor="roomType" className="text-2xl block text-gray-700 mb-2">
           Room Type
         </label>
         <select
           id="roomType"
           value={roomType}
           onChange={(e) => setRoomType(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-4 mb-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           <option value="">Select Room Type</option>
           <option value="Single">Single</option>
@@ -158,11 +146,11 @@ function PreferenceForm({ onRecommendations }) {
           <option value="Shared">Shared</option>
         </select>
 
-        {/* Amenities Checkboxes */}
-        <label className="text-2xl block text-gray-700 mb-2 mt-2">
+        {/* Amenities */}
+        <label className="text-2xl block text-gray-700 mb-2">
           Amenities Needed
         </label>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap mb-6">
           {allAmenities.map((amenity) => (
             <div key={amenity} className="mr-4 mb-2">
               <input
@@ -172,22 +160,22 @@ function PreferenceForm({ onRecommendations }) {
                 onChange={handleAmenityChange}
                 className="mr-2"
               />
-              <label htmlFor={amenity} className="py-2 px-3 text-gray-700">
+              <label htmlFor={amenity} className="text-gray-700">
                 {amenity}
               </label>
             </div>
           ))}
         </div>
 
-        {/* Safety Priority Dropdown */}
-        <label htmlFor="safetyPriority" className="text-2xl block text-gray-700 mb-2 mt-2">
+        {/* Safety Priority */}
+        <label htmlFor="safetyPriority" className="text-2xl block text-gray-700 mb-2">
           Safety Priority
         </label>
         <select
           id="safetyPriority"
           value={safetyPriority}
           onChange={(e) => setSafetyPriority(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-4 mb-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           <option value="">Select Safety Priority</option>
           <option value="High">High</option>
@@ -195,16 +183,17 @@ function PreferenceForm({ onRecommendations }) {
           <option value="Low">Low</option>
         </select>
 
-        <div className="text-2xl flex justify-center mt-8">
+        {/* Submit Button */}
+        <div className="flex justify-center mt-8">
           <button
             type="submit"
-            className="bg-pink-500 hover:bg-pink-700 text-white py-2 px-8 rounded-full"
+            className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
           >
             Show Recommendations
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 
